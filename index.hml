@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8" />
+    <title>Azhar | Portfolio</title>
+  </head>
+  <body>
+    <div id="container">
+      <nav tabindex="0">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <section id="home">
+        <h1>Hi, my name is <span class="highlight">Mohammed Azhar Ahmed</span><br>I am a web developer</h1>
+      </section>
+      <section id="about">
+        <h1>About Me</h1>
+        <article>I am an undergraduate student from Kolkata, India working as a full stack web developer. My areas of interest includes creating webpages specifically web applications like PWAs(Progressive Web Applications) and SPAs(Single Page Applications). I also master in making javascript Canvas based animations/games using <a href="https://projects.calebevans.me/jcanvas/" target="_blank">jCanvas</a> and <a href="http://p5js.org" target="_blank">p5js</a> javascipt APIs. Not only skilled in Frontend but have well and good experience in backend developement. In the backend side I can work with serverside applications including <a href="http://php.net" target="_blank">php</a> and <a href="http://nodejs.org" target="_blank">nodejs</a> along with database management systems like <a href="http://mysql.com" target="_blank">mysql</a>. Programming languages that I know are <a href="http://python.org" target="_blank">Python</a>, <a href="http://java.com" target="_blank">Java</a> and <a href="http://directory.fsf.org/wiki/Gcc" target="_blank">C</a>. Open source softwares that I use are <a href="https://git-scm.com" target="_blank">Git</a> and <a href="http://github.com" target="_blank">Github</a>.</article>
+      </section>
+      <section id="education">
+        <h1>Education</h1>
+        <article>
+          <div class="card">
+            <span id="period">2018 - Present</span>
+            <img src="https://uem.edu.in/app/themes/iem-group-wp-theme/resources/logo.png" alt="University's Logo">
+            <!--img src="https://i0.wp.com/uemgroup.s3.amazonaws.com/uploads/sites/2/2015/06/Cover-Pictures.jpg" alt="University Building"--->
+            <div>
+              <h2><a href="https://uem.edu.in/uem-kolkata" target="_blank">University of Engineering and Management, Kolkata</a></h2>
+              <h3>B.Tech. in Computer Science</h3>
+              Pursuing bachelor's degree at present under <a href="https://www.ugc.ac.in" target="_blank">University Grants Commission(UGC)</a> Board.
+            </div>
+          </div>
+          <div class="card">
+            <span id="period">2016 - 2018</span>
+            <img src="https://www.fapskcampuscare.in/Images/Logo.png" alt="Frant Anthony's Logo">
+            <!---img src="http://www.fapskolkata.in/images/event.jpg" alt="Frank Anthony Building"--->
+            <div>
+              <h2><a href="http://www.fapskolkata.in" target="_blank">Frank Anthony Public School, Kolkata</a></h2>
+              <h3>Higher Secondary School</h3>
+              Graduated twelfth standard with 85% under <a href="https://www.cisce.org" target="_blank">Indian School Certificate(ISC) Board</a>.
+            </div>
+          </div>
+          <div class="card">
+            <span id="period">2005 - 2016</span>
+            <img src="http://www.smrcampuscare.in/Images/Logo.png" alt="St. Mary's Logo">
+            <!---img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t1.0-9/1514992_490325307749068_228948756_n.jpg?_nc_cat=104&_nc_sid=9267fe&_nc_ohc=KulHblFo9QUAX--pCuG&_nc_ht=scontent.fccu3-1.fna&oh=390be44a442204a41363dcc6e897c91c&oe=5F734545" alt="St. Mary Building"--->
+            <div>
+              <h2><a href="http://www.smrcampuscare.in" target="_blank">St. Mary's School, Kolkata</a></h2>
+              <h3>Primary and Secondary School</h3>
+              Graduated tenth standard with 82% under <a href="https://www.cisce.org" target="_blank">Indian Certificate of Secondary Education(ICSE) Board</a>.
+            </div>
+          </div>
+        </article>
+      </section>
+      <section id="projects">
+        <h1>My Projects</h1>
+        <article></article>
+        <h1>Projects I contributed</h1>
+        <article></article>
+      </section>
+      <section id="certifications">
+        <h1>Certificates Achieved</h1>
+        <article>
+          <div class="certificate">
+            <img src="https://img-a.udemycdn.com/course/480x270/21386_e4cd_4.jpg" alt="Course Banner">
+            <h3>Beginner Photoshop to HTML5 and CSS3</h3>
+            <h4>Carl Heaton</h4>
+            <a href="https://www.udemy.com/certificate/UC-b07a5adb-06f2-4fa9-8a0a-afea4f66d81f/" target="_blank">Certificate</a>
+          </div>
+          <div class="certificate">
+            <img src="https://img-a.udemycdn.com/course/480x270/2745264_2954.jpg" alt="Course Banner">
+            <h3>Start Coding Browser Extensions Using JavaScript!</h3>
+            <h4>Joseph Delgadillo</h4>
+            <a href="https://www.udemy.com/certificate/UC-ba6be844-1a83-4fbb-bcde-538a21573aaa/" target="_blank">Certificate</a>
+          </div>
+        </article>
+      </section>
+      <section id="skills">
+        <h1>Skills</h1>
+        <div class="lang-container"></div>
+        <article>
+          <ul>
+            <li>Web Design Languages:<ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+            </li>
+            <li>Web Frameworks/Libraries:<ul>
+                <li>jQuery</li>
+                <li>AngularJS</li>
+                <li>p5js</li>
+                <li>jCanvas</li>
+              </ul>
+            </li>
+            <li>Server Side Languages:<ul>
+                <li>php</li>
+                <li>nodejs</li>
+              </ul>
+            </li>
+            <li>Query Languages:<ul>
+                <li>MySQL</li>
+              </ul>
+            </li>
+            <li>Software Languages:<ul>
+                <li>Java</li>
+                <li>Python</li>
+                <li>C</li>
+              </ul>
+            </li>
+            <li>Others:
+              <ul>
+                <li>Android Studio</li>
+              </ul>
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section id="contact">
+        <h1>Contact Me</h1>
+        <h4>Write me a message.</h4>
+        <form action="javascript:void(0)">
+          <span class="response sending">Sending Message</span>
+          <span class="response success">Message Sent Successfully!</span>
+          <span class="response failure">Failed to Send Message!</span>
+          <label for="username">Name :</label><input type="text" name="username" id="username" placeholder="John Doe" required>
+          <br>
+          <label for="email">Email :</label><input type="email" name="email" id="email" placeholder="john.doe@example.com" required>
+          <br>
+          <label for="message">Message :</label><textarea name="message" id="message" cols="50" rows="10" placeholder="Message..." required></textarea>
+          <br>
+          <input type="submit">
+        </form>
+      </section>
+      <footer>Designed and Build with <span id="love">&#x2764;</span> by Azhar</footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
