@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/*@font-face{/*NOT NEEDED IF ONLINE, ONLY NEEDED IF OFFLINE * /
+	font-family: 'Montserrat', sans-serif;
+	src: url(montserrat.woff2);
+}*/
 html, body {
   margin: 0;
   padding: 0;
@@ -95,19 +99,57 @@ section::before{
   width: 100%;
   height: 100%;
 }
-section#about::before{
-  background-color: #000000d0;
+section::after {
+  content: '';
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  background: white;
+}
+section#about::before, section#education::before, section#certifications::before{
+  background-color: #000000a0;
 }
 section#home::before{
   background-color: #ffffffd0;
 }
+section#skills::before{
+  filter: sepia(1);
+  background-color: #ffffffa0;
+}
+section#about, section#education h1, section#certifications h1/*, section#contact h1*/{
+  color: white;
+}
 section#about{
   background-image: url(https://images.unsplash.com/flagged/photo-1556655678-9d4812e3fbe9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2251&q=80);
-  color: white;
 }
 section#home{
   background-image: url(https://images.unsplash.com/photo-1504353888070-4ee702492320?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1622&q=80);
 }
+section#education{
+  background-image: url(https://images.unsplash.com/photo-1489486501123-5c1af10d0be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+}
+section#certifications{
+  background-image: url(https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+}
+section#skills{
+  background-image: url(https://get.pxhere.com/photo/computer-writing-hand-pencil-coffee-black-and-white-keyboard-technology-white-mouse-cup-black-monochrome-blackandwhite-publicdomain-earbuds-drawing-multimedia-earphones-computer-keyboard-monochrome-photography-427292.jpg);
+  /*background-image: url(https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);*/
+}
+section#projects{
+  background-image: url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1778&q=80);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  display: inline-block;
+}
+section#contact{
+  background: lightseagreen;
+}
+/*section#skills{
+  background-image: url(https://images.unsplash.com/photo-1515787366009-7cbdd2dc587b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+}*/
 
 section{
   /*scroll-snap-align: center;*/
@@ -115,23 +157,32 @@ section{
   min-height: calc(100vh - 100px);
   height: max-content;
   position: relative;
-  display: block;
-  /*display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;*/
+  /*display: block;*/
   font-family: 'Montserrat', sans-serif;
   color: #272341;
   padding: 50px;
   padding-top: calc(1.2em + 40px);
-  
-  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /*display: inline-block;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 section > *{
   position: relative;
+}
+section#projects > *{
+  float: left;
+  margin-left: auto;
+  width: max-content;
+}
+section#projects h1{
+  width: 100%;
+  color: white;
+  text-shadow: 3px 5px darkslategray;
+  filter: drop-shadow(0 0 10px white);
 }
 section#about article{
   line-height: 1.7em;
@@ -141,7 +192,15 @@ section#about article{
   right: 50%;
   margin-left: auto;
 }
-section#about h1, section#about article{
+section#education article{
+  background: #ffffff;
+  width: max-content;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 0 30px;
+  border-radius: 20px;
+}
+section#about *{
   text-shadow: 0 0 10px gray;
 }
 section h1{
@@ -174,10 +233,6 @@ section a::after{
 section a:hover::after{
   width: 100%;
 }
-/*.card.visible{
-  padding-right: 10px;
-  left: 10px;
-}*/
 .card{
   max-width: 650px;
   min-width: 572px;
@@ -189,19 +244,29 @@ section a:hover::after{
   border-radius: 10px;
   padding: 10px;
   display: flex;
+  background: white;
   flex-direction: row;
   box-shadow: none;
-  /*padding-right: 20px;
-  left: 0;*/
+  left: 0;
+  transition: box-shadow 0.1s, left 0.25s;
+}
+.card:hover{
   padding-right: 10px;
   left: 10px;
-  transition: box-shadow 0.1s/*, padding-right 0.25s 0.5s, left 0.25s 0.5s*/;
+  box-shadow: 0 0 7px darkgrey;
 }
+.card:hover::before{
+  height: calc(100% + 1em + 21px);
+  transition-duration: 1s;
+  background: linear-gradient(#00fff1, lightseagreen);
+}
+
 .card::before {
   content: '';
   position: absolute;
   display: inline-block;
   background: linear-gradient(darkgray, dimgray);
+  /*box-shadow: 0 0 10px 10px white;*/
   /*background: linear-gradient(#00fff1, lightseagreen);*/
   height: 0;
   width: 4px;
@@ -212,47 +277,35 @@ section a:hover::after{
   bottom: calc(-10px - 0.85em);
   transition: height 0.25s;
 }
-.card.visible::before {
-  height: calc(100% + 1em + 21px);
-  transition-duration: 1s;
-  transition-delay: 1s;
+.card.visible #period {
+  height: 1.7em;
+  transition-delay: 0s, 1s;
 }
-.card.visible #period{
-  width: 100%;
-  transition: width 3s 2s;
-}
-.card #period{
+.card #period {
   position: absolute;
   display: block;
-  left: -13px;
-  top: calc(-1em - 11px);
+  left: -3px;
   color: dimgray;
-  /*color: lightseagreen;*/
   font-weight: bold;
-  overflow: hidden;
-  height: 1.7em;
-  width: 0;
+  height: 0;
   text-align: left;
-  transition: width 0s;
   line-height: 1.7em;
+  bottom: 100%;
+  width: max-content;
+  overflow: hidden;
+  transition: left 0.25s, height 1s;
 }
 .card #period::before {
   content: '\2501\2501   ';
   white-space: pre;
   color: darkgray;
-  /*color: #00fff1;*/
 }
-.card:hover{
-  box-shadow: 0 0 7px darkgrey;
-}
-.card:hover span#period{
+.card:hover #period {
   color: lightseagreen;
+  left: -13px;
 }
-.card:hover span#period::before{
+.card:hover #period::before{
   color: #00fff1;
-}
-.card:hover::before{
-  background: linear-gradient(#00fff1, lightseagreen);
 }
 .card a:hover{
   color: lightseagreen;
@@ -287,21 +340,24 @@ span.highlight{
   max-width: 550px;
   /*height: 160px;*/
   width: calc(90% - 40px);
-  position: relative;
+  position: inherit;
   display: block;
   margin: 20px auto;
   border: 2px solid gray;
   border-radius: 10px;
   padding: 20px;
   color: black;
-  left: 100px;
-  transition: box-shadow 0.25s, left 1s;
+  background: white;
+  top: 100px;
+  opacity: 0;
+  transition: box-shadow 0.25s, top 1s, opacity 1s;
 }
 .repo-card.visible{
-  left: 0;
+  top: 0;
+  opacity: 1;
 }
-.repo-card:hover{
-  box-shadow: 0 0 10px 5px darkgrey;
+.repo-card:hover {
+  box-shadow: 0 0 10px 2px black;
 }
 .repo-card::before {
   content: '';
@@ -339,7 +395,7 @@ span.highlight{
 .repo-card > a.repo-link:empty{
   display: none;
 }
-.repo-card > a.repo-link::after{
+.repo-card a::after{
   content: none;
 }
 .repo-card div{
@@ -377,13 +433,28 @@ section#home{
   display: flex;
   align-items: center;
 }
+#skills{
+  text-align: center;
+}
+#skills article{
+  display: inline-block;
+  padding: 20px 0;
+  width: max-content;
+  margin: 0 auto;
+}
 /*section:nth-of-type(1) h1 {
   text-transform: none;
 }*/
-
-#skills .lang-container{
-  text-align: center;
+/*
+#skills article{
+  width: max-content;
+  text-shadow: 0 0 5px lightgrey;
 }
+#skills > * {
+  max-width: 40%;
+  margin: 0 auto;
+  left: 2%;
+}*/
 #skills .lang-icon{
   position: relative;
   width: 75px;
@@ -415,6 +486,7 @@ section#home{
   height: 0;
   overflow: hidden;
   transition: height 0.25s, top 0.25s;
+  text-shadow: 0 0 5px white;
 }
 #skills .lang-icon:hover::before {
   height: calc(1em + 5px);
@@ -449,6 +521,7 @@ span.response.visible {
   height: max-content;
   padding: 7px;
   margin: 10px auto;
+  border: 1px solid lightgray;
 }
 span.response.sending::after {
   content: '\2503';
@@ -473,6 +546,7 @@ form label{
   float: left;
   min-width: 100px;
   padding: 11px 0;
+  text-shadow: 1px 1px 5px white;
 }
 form input:not(:last-child){
   width: calc(100% - 124px);
@@ -490,25 +564,24 @@ form input, textarea{
 form *:invalid ~ input[type="submit"]{
   left: 0;
   top: 0;
-  /*text-shadow: none;*/
   box-shadow: none;
 }
 form input[type="submit"]{
   display: block;
-  margin: 0 25%;
+  margin: 0 25% 40px;
   width: 50%;
   border: initial;
-  color: white;
   font-weight: bold;
   font-size: 1.2em;
-  background: lightseagreen;
   position: relative;
   transition: left 0.1s, top 0.1s, box-shadow 0.1s;
   left: -3px;
   top: -5px;
   /*text-shadow: 0 0 7px silver;*/
-  box-shadow: 3px 5px 0px grey;
-  text-transform: uppercase;
+  text-transform: uppercase;  
+  color: lightseagreen;
+  background: white;
+  box-shadow: 3px 5px 0px darkslategrey;
 }
 form input[type="submit"]:active{
   box-shadow: none;
@@ -519,6 +592,23 @@ form textarea{
   max-width: calc(100vw - 240px);
   min-width: calc(100% - 124px);
 }
+#social-links{
+  width: max-content;
+  margin: 0 auto;
+  padding: 5px;
+  background: white;
+  border-radius: 5px;
+}
+#social-links a{
+  cursor: pointer;
+}
+#social-links a:hover{
+  color: var(--color);
+}
+#social-links a::after{
+  display: none;
+}
+
 section#certifications article, section#contact{
   text-align: center;
 }
@@ -529,6 +619,7 @@ article .certificate {
   padding: 10px;
   border: 1px solid gray;
   margin: 10px 03px;
+  background-color: white;
 }
 .certificate h3, .certificate h4{
   display: none;
@@ -572,10 +663,12 @@ article .certificate {
 }
 .certificate a {
   text-align: center;
+  padding: 5px 0;
+  margin-top: 5px;
   display: block;
   width: 100%;
   background: linear-gradient(lightseagreen, lightseagreen) no-repeat;
-  background-position: 0 1.7em;
+  background-position: 0 2em;
   transition: text-decoration 0.25s 0.25s, background-position 0.25s 0s, color 0.25s 0s;
 }
 .certificate a:hover {
@@ -597,7 +690,7 @@ footer #love {
 }
 article ul {
   /*list-style-type: none;*/
-  padding-inline-start: 10px;
+  padding-inline-start: 20px;
   font-weight: bold;
   letter-spacing: 0.2px;
 }
@@ -607,12 +700,18 @@ article li {
 ul ul, ul ul > li {
   letter-spacing: 0.5px;
   display: inline-block;
-  color: lightseagreen;
+  color: darkcyan;
   letter-spacing: 1px;
+  text-shadow: -1px 1px grey;
+}
+article > ul > li {
+  margin: 10px 0;
+  font-size: 1.2em;
 }
 ul ul > li:not(:last-child)::after {
   content: ', ';
   color: #272341;
+  text-shadow: none;
 }
 
 @keyframes loading{
@@ -623,7 +722,7 @@ ul ul > li:not(:last-child)::after {
   100%{transform: rotate(360deg);}
 }
 
-/*section#home, #about, #education, #projects, #contact, #certifications{display: none;}*/
+/*section#home, #about, #education, #projects, #skills, #certifications{display: none;}*/
 @media only screen and (max-width: 750px) {
   nav{
     height: 100vh;
@@ -652,6 +751,7 @@ ul ul > li:not(:last-child)::after {
     color: dimgray;
     cursor: pointer;
     right: -60px;
+    text-shadow: 0 0 7px darkcyan;
   }
   nav:focus::before{
     content: '\2715';
@@ -693,6 +793,21 @@ ul ul > li:not(:last-child)::after {
   section h1{
     margin-block-start: 0;
   }
+  section#education article{
+    width: unset;
+    padding: 10px;
+  }
+  section#projects > *{
+    float: unset;
+    margin: unset;
+    width: unset;
+  }
+  section#projects{
+    background-position: left;
+  }
+  #skills article{
+    width: unset;
+  }
 }
 
 @media only screen and (max-width: 650px) {
@@ -702,6 +817,9 @@ ul ul > li:not(:last-child)::after {
     margin-top: calc(1em + 20px);
     left: 10px;
     transition: none;
+  }
+  .card:hover{
+    left: 10px;
   }
   .card img{
     width: auto;
@@ -767,16 +885,54 @@ ul ul > li:not(:last-child)::after {
   form input[type="submit"]{
     font-size: 1.5em;
   }
+  section#about{
+    background-position: left;
+  }
+  section#about article{
+    width: unset;
+    right: 0;
+    margin: 0;
+    max-width: unset;
+  }
+  .card #period{
+    left: -13px;
+  }
+  section#education article{
+    padding: 20px;
+  }
 }
 @media only screen and (max-width: 550px) {
   section{
     padding: 20px;
-    width: calc(100vw - 40px);
+    width: calc(100% - 40px);
     height: max-content;
     min-height: calc(100vh - 40px);
   }
   form{
     width: calc(100% - 60px);
     margin: 0 30px 30px;
+  }
+  .repo-card img{
+    width: unset;
+    height: 1.8em;
+  }
+  .repo-card > h2{
+    padding-left: 10px !important;
+  }
+  .repo-card *[class^="repo"]{
+    float: unset;
+    width: unset;
+    padding-left: unset;
+  }
+  .repo-card div > span{
+    margin: 10px 15px 0;
+  }
+}
+@media only screen and (max-width: 368px) {
+  article .certificate{
+    width: calc(100% - 28px);
+  }
+  .certificate img{
+    width: 100%;
   }
 }
