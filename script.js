@@ -2,6 +2,14 @@ var cards = document.querySelectorAll('.card, .repo-card');
 var scroll = window.requestAnimationFrame || function(callback){setTimeout(callback, 1000/60);};
 const form = document.querySelector('#contact form');
 const sk = document.querySelector('#skills .lang-container');
+const sl = document.querySelector('#social-links');
+const socials = {
+  facebook: 'https://facebook.com/ahmedazhar05',
+  twitter: 'https://twitter.com/ahmedazhar05',
+  github: 'https://github.com/ahmedazhar05',
+  instagram: 'https://instagram.com/ahmedazhar05',
+  linkedin: 'https://linkedin.com/in/mohammed-azhar-ahmed-4006601b2/',
+};
 const languages = [
   'HTML5', 
   'JavaScript', 
@@ -16,6 +24,19 @@ const languages = [
   'C', 
   'Android'
 ];
+fetch('https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data/simple-icons.json')
+.then(response => response.json())
+.then(data => {
+  for(var i in socials){
+    const t = document.createElement('A');
+    t.style.setProperty('--color', '#' + data.icons.find(v => v.title.toLowerCase() == i).hex);
+    //t.dataset.color = '#' + data.icons.find(v => v.title.toLowerCase() == i).hex;
+    t.className = 'fab fa-2x fa-fw fa-'+i;
+    t.href = socials[i];
+    t.target = '_blank';
+    sl.appendChild(t);
+  }
+});
 fetch('https://api.github.com/users/ahmedazhar05/repos')
 .then(response => response.json())
 .then(data => {
