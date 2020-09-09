@@ -118,8 +118,13 @@ section#skills::before{
   filter: sepia(1);
   background-color: #ffffffa0;
 }
-section#about, section#education h1, section#certifications h1/*, section#contact h1*/{
+section#about, section#education h1, section#certifications h1, section#projects h1/*, section#contact h1*/{
   color: white;
+}
+section#projects h1{
+  width: 100%;
+  text-shadow: 3px 5px darkslategray;
+  filter: drop-shadow(0 0 10px white);
 }
 section#about{
   background-image: url(https://images.unsplash.com/flagged/photo-1556655678-9d4812e3fbe9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2251&q=80);
@@ -178,12 +183,6 @@ section#projects > *{
   margin-left: auto;
   width: max-content;
 }
-section#projects h1{
-  width: 100%;
-  color: white;
-  text-shadow: 3px 5px darkslategray;
-  filter: drop-shadow(0 0 10px white);
-}
 section#about article{
   line-height: 1.7em;
   text-align: justify;
@@ -191,6 +190,28 @@ section#about article{
   max-width: 400px;
   right: 50%;
   margin-left: auto;
+}
+section#about button{
+  width: 200px;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 1.1em;
+  color: white;
+  background: lightseagreen;
+  border: 0;
+  display: block;
+  box-shadow: 3px 3px 5px darkslategray;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+section#about > a {
+  text-shadow: none;
+  width: max-content;
+  margin: 20px 0 0 auto;
+  right: 50%;
+}
+section#about > a::after{
+  content: none;
 }
 section#education article{
   background: #ffffff;
@@ -210,6 +231,7 @@ section h1{
   width: 100%;
   /*text-transform: uppercase;*/
   margin-block-start: 20px;
+  margin-block-end: 10px;
 }
 section a{
   color: lightseagreen;
@@ -568,7 +590,7 @@ form *:invalid ~ input[type="submit"]{
 }
 form input[type="submit"]{
   display: block;
-  margin: 0 25% 40px;
+  margin: 0 25% 0;
   width: 50%;
   border: initial;
   font-weight: bold;
@@ -591,6 +613,22 @@ form input[type="submit"]:active{
 form textarea{
   max-width: calc(100vw - 240px);
   min-width: calc(100% - 124px);
+}
+#contact img{
+  width: max-content;
+  height: max-content;
+  margin: 0 auto;
+  margin-block-start: 20px;
+  border-radius: 100px;
+  border: 4px solid white;
+}
+#contact h3{
+  color:white;
+  text-shadow: 1px 1px black;
+  font-weight: bold;
+}
+#contact h3 > span.place::before{
+  content: 'below';
 }
 #social-links{
   width: max-content;
@@ -722,7 +760,6 @@ ul ul > li:not(:last-child)::after {
   100%{transform: rotate(360deg);}
 }
 
-/*section#home, #about, #education, #projects, #skills, #certifications{display: none;}*/
 @media only screen and (max-width: 750px) {
   nav{
     height: 100vh;
@@ -894,11 +931,19 @@ ul ul > li:not(:last-child)::after {
     margin: 0;
     max-width: unset;
   }
+  section#about > a{
+    right: 0;
+    left: 0;
+    margin: 20px auto 0;
+  }
   .card #period{
     left: -13px;
   }
   section#education article{
     padding: 20px;
+  }
+  #contact h4{
+    margin-block-end: 0;
   }
 }
 @media only screen and (max-width: 550px) {
@@ -936,3 +981,4 @@ ul ul > li:not(:last-child)::after {
     width: 100%;
   }
 }
+/*section#home, #about, #education, section#projects, #skills, #certifications{display: none;}*/
