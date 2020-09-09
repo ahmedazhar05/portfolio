@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body{
+  margin: 10px 0;
+  background: white;
+}
+#container{
+  width: calc(21cm - 2cm);
+  /*height: calc(29.7cm - 2cm); padding removal*/
+  padding: 1cm;
+  margin: 0 auto;
+  box-shadow: 0 0 5px black;
+}
+header{
+  padding: 20px 30px;
+  /*height: max-content;*/
+  height: calc(150px + 6px);
+  display: inline-block;
+  width: calc(100% - 60px);
+  background: aliceblue;
+  text-align: right;
+  position: relative;
+}
+header img{
+  display: block;
+  float: left;
+  position: relative;
+  border-radius: 100px;
+  border: 3px solid darkgray;
+}
+header span{
+  position: relative;
+  right: 0;
+}
+span#name, span#job-title{
+  text-transform: uppercase;
+  font-family: Helvetica;
+  font-weight: bold;
+}
+span#email, span#mobile, span#address{
+  font-style: italic;
+}
+span#name{
+  font-size: 1.6em;
+  text-transform: uppercase;
+  display: block;
+  margin-left: 156px;
+  margin-top: calc(78px - 1.6em);
+}
+span#address{
+  font-family: sans-serif;
+  font-size: 0.9em;
+  color: dimgray;
+}
+
+main{
+  position: relative;
+  padding: 20px 30px 0;
+}
+section {
+  font-family: 'Montserrat', Helvetica;
+  page-break-inside: avoid;
+}
+section h2{
+  font-variant: small-caps;
+  margin: 0;
+  position: relative;
+  /*margin-block-end: 20px;*/
+  color: darkslategray;
+  font-family: Helvetica;
+}
+section h2::after {
+  content: '';
+  bottom: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  border-bottom: 1px solid currentColor;
+}
+section a{
+  text-decoration: none;
+  color: currentColor;
+}
+section ul, section ol {
+  padding-inline-start: 30px;
+}
+section > ul{
+  font-weight: bold;
+  margin-block-start: 10px;
+  margin-block-end: 10px;
+}
+section > ul > li, section dt{
+  margin-block-start: 10px;
+}
+ul span {
+  font-family: Helvetica;
+  font-size: 0.9em;
+  float: right;
+  font-weight: normal;
+  color: dimgray;
+}
+section ol{
+  font-weight: normal;
+}
+ul ul{
+  padding-inline-start: 0;
+  list-style-type: none;
+  display: inline;
+}
+ul ul > li{
+  font-weight: normal;
+  display: inline-block;
+}
+ul ul > li:not(:last-child)::after{
+  content: ', ';
+}
+button{
+  padding: 10px;
+  width: 25%;
+  display: block;
+  margin: 10px auto;
+  font-size: 1.2em;
+  border-radius: 3px;
+  background: dodgerblue;
+  border: 0;
+  color: white;
+  font-weight: bold;
+}
+dl{
+  padding-inline-start: 30px;
+}
+section:nth-of-type(3){
+  page-break-inside: auto;
+}
+dt:nth-of-type(4){
+  page-break-before: always;
+}
+dt{
+  page-break-before: auto;
+  page-break-after: avoid;
+  display: list-item;
+}
+section:not(:last-child) dt{
+  font-weight: bold;
+}
+dd{
+  page-break-before: avoid;
+  /*font-style: italic;*/
+  /*font-size: 0.9em;*/
+}
+@page{
+  size: A4 portrait;
+  margin: 1cm;
+  @top-center {
+    content: "CV | Mohammed Azhar Ahmed";
+  }
+  @bottom-center {
+    content: counter(page);
+    counter-increment: page;
+  }
+  @top-left-corner {content: none}
+  @top-left {content: none}
+  @top-center {content: none}
+  @top-right {content: none}
+  @top-right-corner {content: none}
+  @right-top {content: none}
+  @right-middle {content: none}
+  @right-bottom {content: none}
+  @bottom-right-corner {content: none}
+  @bottom-right {content: none}
+  @bottom-center {content: none}
+  @bottom-left {content: none}
+  @bottom-left-corner {content: none}
+  @left-bottom {content: none}
+  @left-center {content: none}
+  @left-top {content: none}
+}
+@media print {
+  body{
+    margin: 0;
+  }
+  #container{
+    box-shadow: none;
+    padding: 0;
+  }
+  button{
+    display: none;
+  }
+}
