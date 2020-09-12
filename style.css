@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-/*@font-face{/*NOT NEEDED IF ONLINE, ONLY NEEDED IF OFFLINE * /
-	font-family: 'Montserrat', sans-serif;
-	src: url(montserrat.woff2);
-}*/
 html, body {
   margin: 0;
   padding: 0;
@@ -151,6 +147,8 @@ section#projects{
 }
 section#contact{
   background: lightseagreen;
+  /*display: inline-block;*/
+  text-align: center;
 }
 /*section#skills{
   background-image: url(https://images.unsplash.com/photo-1515787366009-7cbdd2dc587b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
@@ -221,7 +219,7 @@ section#education article{
   padding: 10px 0 30px;
   border-radius: 20px;
 }
-section#about *{
+section#about *:not(:last-child), #home h1{
   text-shadow: 0 0 10px gray;
 }
 section h1{
@@ -279,7 +277,8 @@ section a:hover::after{
 }
 .card:hover::before{
   height: calc(100% + 1em + 21px);
-  transition-duration: 1s;
+  left: -13px;
+  transition-duration: 1s, 0.25s;
   background: linear-gradient(#00fff1, lightseagreen);
 }
 
@@ -292,12 +291,12 @@ section a:hover::after{
   /*background: linear-gradient(#00fff1, lightseagreen);*/
   height: 0;
   width: 4px;
-  left: -13px;
+  left: -3px;
   /*top: -0.85em;
   opacity: 0;
   transition: opacity 0.25s;*/
   bottom: calc(-10px - 0.85em);
-  transition: height 0.25s;
+  transition: height 0.25s, left 0.25s;
 }
 .card.visible #period {
   height: 1.7em;
@@ -583,8 +582,8 @@ form input, textarea{
   resize: horizontal;
   font-size: 1em;
 }
-form *:invalid ~ input[type="submit"]{
-  left: 0;
+form *:invalid ~ input[type="submit"], form input[type="submit"]:active{
+  left: 50px;
   top: 0;
   box-shadow: none;
 }
@@ -597,18 +596,13 @@ form input[type="submit"]{
   font-size: 1.2em;
   position: relative;
   transition: left 0.1s, top 0.1s, box-shadow 0.1s;
-  left: -3px;
+  left: 47px;
   top: -5px;
   /*text-shadow: 0 0 7px silver;*/
   text-transform: uppercase;  
   color: lightseagreen;
   background: white;
   box-shadow: 3px 5px 0px darkslategrey;
-}
-form input[type="submit"]:active{
-  box-shadow: none;
-  left: 0;
-  top: 0;
 }
 form textarea{
   max-width: calc(100vw - 240px);
@@ -626,9 +620,46 @@ form textarea{
   color:white;
   text-shadow: 1px 1px black;
   font-weight: bold;
+  user-select: none;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
 }
 #contact h3 > span.place::before{
+  content: 'aside';
+}
+#contact div.centered span.place::before {
   content: 'below';
+}
+#contact h3 > a {
+  color: white;
+  border: 1px solid lightgray;
+  padding: 0 5px;
+  font-style: italic;
+}
+/*section#contact > div {
+  width: max-content;
+  max-width: 100%;
+  min-width: calc(50% - 5px);
+  margin: 0 auto;
+}*/
+section#contact > div {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+}
+section#contact > div.centered > div {
+  float: unset;
+}
+section#contact > div > div {
+  float: left;
+  width: max-content;
+  max-width: 100%;
+  min-width: 50%;
+  margin: 0 auto;
+}
+section#contact > div > div + div {
+  float: right;
 }
 #social-links{
   width: max-content;
@@ -855,6 +886,9 @@ ul ul > li:not(:last-child)::after {
     left: 10px;
     transition: none;
   }
+  .card::before{
+    left: -13px;
+  }
   .card:hover{
     left: 10px;
   }
@@ -921,6 +955,11 @@ ul ul > li:not(:last-child)::after {
   }
   form input[type="submit"]{
     font-size: 1.5em;
+    left: -3px !important;
+  }
+  form *:invalid ~ input[type="submit"], form input[type="submit"]:active{
+    font-size: 1.5em;
+    left: 0 !important;
   }
   section#about{
     background-position: left;
