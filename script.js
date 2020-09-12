@@ -4,26 +4,34 @@ const form = document.querySelector('#contact form');
 const sk = document.querySelector('#skills .lang-container');
 const sl = document.querySelector('#social-links');
 const socials = {
-  facebook: 'https://facebook.com/ahmedazhar05',
-  twitter: 'https://twitter.com/ahmedazhar05',
-  github: 'https://github.com/ahmedazhar05',
-  instagram: 'https://instagram.com/ahmedazhar05',
-  linkedin: 'https://linkedin.com/in/mohammed-azhar-ahmed-4006601b2/',
+  facebook: 'https://facebook.com/',
+  twitter: 'https://twitter.com/',
+  github: 'https://github.com/',
+  instagram: 'https://instagram.com/',
+  linkedin: 'https://linkedin.com/in/',
+  //linkedin: 'https://linkedin.com/in/mohammed-azhar-ahmed-4006601b2/',
 };
 const languages = [
   'HTML5', 
   'JavaScript', 
   'CSS3', 
   'jQuery', 
+  'nodejs', 
+  'MySQL', 
   'AngularJS', 
   'php', 
-  'MySQL', 
-  'nodejs', 
   'Python', 
   'Java', 
   'C', 
   'Android'
 ];
+window.onload = window.onresize = () => {
+  const div = document.querySelector('#contact > div');
+  if(Array.from(document.querySelectorAll('#contact > div > div')).reduce((t, e) => t + e.clientWidth, 0) > div.clientWidth)
+    div.classList.add('centered');
+  else 
+    div.classList.remove('centered');
+};
 fetch('https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data/simple-icons.json')
 .then(response => response.json())
 .then(data => {
@@ -32,7 +40,7 @@ fetch('https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data
     t.style.setProperty('--color', '#' + data.icons.find(v => v.title.toLowerCase() == i).hex);
     //t.dataset.color = '#' + data.icons.find(v => v.title.toLowerCase() == i).hex;
     t.className = 'fab fa-2x fa-fw fa-'+i;
-    t.href = socials[i];
+    t.href = socials[i]+'ahmedazhar05';
     t.target = '_blank';
     sl.appendChild(t);
   }
