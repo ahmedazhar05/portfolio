@@ -336,6 +336,7 @@ section a:hover::after{
   float: left;
   align-self: center;
   margin-right: 10px;
+  flex-shrink: 0;
 }
 .card:first-child img{
   clip-path: inset(0 5px);
@@ -483,7 +484,7 @@ section#home{
   padding-top: calc(1em + 5px);
   margin: 2px 10px;
   display: inline-block;
-  filter: grayscale(1);
+  filter: grayscale(1) drop-shadow(5px 5px 4px white);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center bottom;
