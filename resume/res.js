@@ -10,6 +10,6 @@ fetch('https://api.github.com/users/ahmedazhar05/repos')
     var description = i.description;
     if(description == null)
       description = 'No description';
-    section.innerHTML += '<dt>'+name+'</dt><dd>'+description+'</dd><dd><b>Github link: </b><a href="'+link+'">'+link+'</a></dd>';
+    section.innerHTML += '<div><dt>'+name+'</dt><dd>'+description+'</dd><dd><b>Github link: </b><a href="'+link+'">'+link+'</a></dd></div>';
   }
 });
