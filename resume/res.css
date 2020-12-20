@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 body{
-  margin: 10px 0;
+  margin: 10px auto;
+  width: max-content;
   background: white;
 }
 #container{
@@ -114,17 +115,24 @@ ul ul > li{
 ul ul > li:not(:last-child)::after{
   content: ', ';
 }
+#container + button{
+  float: left;
+}
+button + button{
+  float: right;
+}
 button{
   padding: 10px;
   width: 25%;
   display: block;
-  margin: 10px auto;
+  margin: 10px;
   font-size: 1.2em;
   border-radius: 3px;
   background: dodgerblue;
   border: 0;
   color: white;
   font-weight: bold;
+  float: left;
 }
 dl{
   padding-inline-start: 30px;
