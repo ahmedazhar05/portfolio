@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+:root{
+  --page-margin: 1cm;
+}
 body{
   margin: 10px auto;
   width: max-content;
   background: white;
 }
 #container{
-  width: calc(21cm - 2cm);
+  width: calc(21cm - var(--page-margin) * 2);
   /*height: calc(29.7cm - 2cm); padding removal*/
-  padding: 1cm;
+  padding: var(--page-margin);
   margin: 0 auto;
   box-shadow: 0 0 5px black;
 }
@@ -20,6 +23,9 @@ header{
   background: aliceblue;
   text-align: right;
   position: relative;
+
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
 }
 header img{
   display: block;
@@ -59,7 +65,6 @@ main{
 }
 section {
   font-family: 'Montserrat', Helvetica;
-  page-break-inside: avoid;
 }
 section h2{
   font-variant: small-caps;
@@ -137,51 +142,14 @@ button{
 dl{
   padding-inline-start: 30px;
 }
-section:nth-of-type(3){
-  page-break-inside: auto;
-}
-dt:nth-of-type(4){
-  page-break-before: always;
-}
 dt{
-  page-break-before: auto;
-  page-break-after: avoid;
   display: list-item;
 }
 section:not(:last-child) dt{
   font-weight: bold;
 }
-dd{
-  page-break-before: avoid;
-  /*font-style: italic;*/
-  /*font-size: 0.9em;*/
-}
-@page{
-  size: A4 portrait;
-  margin: 1cm;
-  @top-center {
-    content: "CV | Mohammed Azhar Ahmed";
-  }
-  @bottom-center {
-    content: counter(page);
-    counter-increment: page;
-  }
-  @top-left-corner {content: none}
-  @top-left {content: none}
-  @top-center {content: none}
-  @top-right {content: none}
-  @top-right-corner {content: none}
-  @right-top {content: none}
-  @right-middle {content: none}
-  @right-bottom {content: none}
-  @bottom-right-corner {content: none}
-  @bottom-right {content: none}
-  @bottom-center {content: none}
-  @bottom-left {content: none}
-  @bottom-left-corner {content: none}
-  @left-bottom {content: none}
-  @left-center {content: none}
-  @left-top {content: none}
+section:nth-of-type(3) div{
+  break-inside: avoid;
 }
 @media print {
   body{
@@ -194,4 +162,13 @@ dd{
   button{
     display: none;
   }
+  section:nth-of-type(3) div{
+    widows: 1;
+    orphans: 1;
+  }
+}
+@page{
+  size: A4 portrait;
+  /*values written below are customised according to --page-margin variable*/
+  margin: 1.3cm 1cm 0.5cm 1cm;
 }
