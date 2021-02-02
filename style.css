@@ -371,12 +371,12 @@ span.highlight{
   padding: 20px;
   color: black;
   background: white;
-  top: 100px;
+  right: 100px;
   opacity: 0;
-  transition: box-shadow 0.25s, top 1s, opacity 1s;
+  transition: box-shadow 0.25s, right 1s, opacity 1s;
 }
 .repo-card.visible{
-  top: 0;
+  right: 0;
   opacity: 1;
 }
 .repo-card:hover {
