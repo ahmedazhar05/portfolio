@@ -17,13 +17,19 @@ const languages = [
   'CSS3', 
   'jQuery', 
   'nodejs', 
+  'Bootstrap-plain.svg', 
   'MySQL', 
   'AngularJS', 
   'php', 
   'Python', 
   'Java', 
   'C', 
-  'Android'
+  'Android', 
+  'Ubuntu-plain.svg', 
+  'Bash', 
+  'git', 
+  'GitHub', 
+  'NGINX', 
 ];
 window.onload = window.onresize = () => {
   const div = document.querySelector('#contact > div');
@@ -73,9 +79,10 @@ fetch('https://api.github.com/users/ahmedazhar05/repos')
 });
 for(var l of languages){
   const elm = document.createElement('DIV');
+  elm.dataset.name = l.match(/^\w+/g);
+  l = l.toLowerCase();
   elm.className = 'lang-icon';
-  elm.dataset.name = l;
-  elm.style.backgroundImage = 'url(https://raw.githubusercontent.com/devicons/devicon/master/icons/'+l.toLowerCase()+'/'+l.toLowerCase()+'-original.svg)';
+  elm.style.backgroundImage = `url(https://raw.githubusercontent.com/devicons/devicon/master/icons/${l.match(/^\w+/g)}/${l.endsWith('.svg') ? l : l + '-original.svg'})`;
   sk.appendChild(elm);
 }
 form.onsubmit = () => {
