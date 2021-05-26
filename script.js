@@ -82,7 +82,7 @@ for(var l of languages){
   elm.dataset.name = l.match(/^\w+/g);
   l = l.toLowerCase();
   elm.className = 'lang-icon';
-  elm.style.backgroundImage = `url(https://raw.githubusercontent.com/devicons/devicon/master/icons/${l.match(/^\w+/g)}/${l.endsWith('.svg') ? l : l + '-original.svg'})`;
+  elm.style.backgroundImage = `url(https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/icons/${l.match(/^\w+/g)}/${l.endsWith('.svg') ? l : l + '-original.svg'})`;
   sk.appendChild(elm);
 }
 form.onsubmit = () => {
