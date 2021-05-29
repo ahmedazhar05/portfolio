@@ -367,7 +367,9 @@ span.highlight{
 }
 .exp-card{
   max-width: 800px;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   padding: 10px;
   text-align: initial;
   background-color: white;
@@ -391,6 +393,7 @@ span.highlight{
   line-height: 1.9em;
   color: dimgray;
   font-size: 0.95em;
+  white-space: nowrap;
 }
 .exp-card span{
   line-height: 1.5em;
@@ -719,6 +722,7 @@ section#contact > div > div + div {
   padding: 5px;
   background: white;
   border-radius: 5px;
+  margin-top: 25px;
 }
 #social-links a{
   cursor: pointer;
@@ -849,14 +853,18 @@ ul ul > li:not(:last-child)::after {
     height: 100vh;
     width: 50vw;
     background: #d3d3d3;
-    left: -50vw;
+    left: calc(-50vw - 1px);
     transition: left 0.5s;
     box-shadow: 0 0 0 0;
+    mix-blend-mode: difference;
+    background: transparent;
   }
   nav:focus{
     left: 0;
     width: min-content;
     box-shadow: 1px 0 10px dimgrey;
+    mix-blend-mode: unset;
+    background: lightgray;
   }
   nav::before{
     content: '\2630';
@@ -869,14 +877,18 @@ ul ul > li:not(:last-child)::after {
     height: 50px;
     line-height: 50px;
     margin-left: auto;
-    color: dimgray;
     cursor: pointer;
     right: -60px;
-    text-shadow: 0 0 7px darkcyan;
+    transition: right 0.5s;
+    mix-blend-mode: difference;
+    filter: invert(1);
   }
   nav:focus::before{
     content: '\2715';
     pointer-events: none;
+    right: 1px;
+    color: transparent;
+    text-shadow: none;
   }
   nav ul{
     flex-direction: column;
@@ -887,6 +899,12 @@ ul ul > li:not(:last-child)::after {
   }
   nav a{
     transition: padding 0.5s;
+    color: transparent;
+    text-shadow: none;
+  }
+  nav:focus ul a {
+    color: inherit;
+    text-shadow: 0 0 10px #f4f4f4;
   }
   nav:focus a{
     padding: 20px 75px;
@@ -1063,6 +1081,12 @@ ul ul > li:not(:last-child)::after {
   }
   .repo-card div > span{
     margin: 10px 15px 0;
+  }
+}
+@media only screen and (max-width: 470px) {
+  .exp-card{
+    flex-direction: column;
+    padding: 20px;
   }
 }
 @media only screen and (max-width: 368px) {

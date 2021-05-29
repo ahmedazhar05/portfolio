@@ -69,7 +69,7 @@ fetch('https://api.github.com/users/ahmedazhar05/repos')
     const forks = i.forks_count;
     const watch = i.watchers_count;
     const div = document.createElement('DIV');
-    div.innerHTML = '<div class="repo-card"><img src="data:image/svg+xml;utf8,<svg xmlns=\'http:\/\/www.w3.org/2000/svg\' viewBox=\'0 0 16 16\' version=\'1.1\' width=\'50\' height=\'67\' aria-hidden=\'true\'><path fill-rule=\'evenodd\' d=\'M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z\'></path></svg>" alt="Repository Icon"><h2 class="repo-name"><a href="'+repo+'" target="_blank">'+name+'</a></h2><span class="repo-desc">'+description+'</span><a href="'+i.homepage+'" target="_blank" class="repo-link">'+link+'</a><div><span class="stars">'+stars+'</span><span class="forks">'+forks+'</span><span class="watchers">'+watch+'</span></div></div>';
+    div.innerHTML = `<div class="repo-card"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' width='50' height='67' aria-hidden='true'><path fill-rule='evenodd' d='M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z'></path></svg>" alt="Repository Icon"><h2 class="repo-name"><a href="${repo}" target="_blank">${name}</a></h2><span class="repo-desc">${description}</span><a href="${i.homepage}" target="_blank" class="repo-link">${link}</a><div><span class="stars">${stars}</span><span class="forks">${forks}</span><span class="watchers">${watch}</span></div></div>`;
     if(i.fork)
       contributed.appendChild(div.firstElementChild);
     else
@@ -82,7 +82,7 @@ for(var l of languages){
   elm.dataset.name = l.match(/^\w+/g);
   l = l.toLowerCase();
   elm.className = 'lang-icon';
-  elm.style.backgroundImage = `url(https://raw.githubusercontent.com/devicons/devicon/master/icons/${l.match(/^\w+/g)}/${l.endsWith('.svg') ? l : l + '-original.svg'})`;
+  elm.style.backgroundImage = `url(https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/icons/${l.match(/^\w+/g)}/${l.endsWith('.svg') ? l : l + '-original.svg'})`;
   sk.appendChild(elm);
 }
 form.onsubmit = () => {
