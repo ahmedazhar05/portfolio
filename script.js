@@ -4,11 +4,12 @@ const form = document.querySelector('#contact form');
 const sk = document.querySelector('#skills .lang-container');
 const sl = document.querySelector('#social-links');
 const socials = {
-  facebook: 'https://facebook.com/',
-  twitter: 'https://twitter.com/',
-  github: 'https://github.com/',
-  instagram: 'https://instagram.com/',
-  linkedin: 'https://linkedin.com/in/',
+  'facebook': 'https://facebook.com/',
+  'twitter': 'https://twitter.com/',
+  'github': 'https://github.com/',
+  'instagram': 'https://instagram.com/',
+  'linkedin': 'https://linkedin.com/in/',
+  'stack-overflow': 'https://stackoverflow.com/users/16236044/',
   //linkedin: 'https://linkedin.com/in/mohammed-azhar-ahmed-4006601b2/',
 };
 const languages = [
