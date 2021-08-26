@@ -13,24 +13,24 @@ const socials = {
   //linkedin: 'https://linkedin.com/in/mohammed-azhar-ahmed-4006601b2/',
 };
 const languages = [
-  'HTML5', 
-  'JavaScript', 
-  'CSS3', 
-  'jQuery', 
-  'nodejs', 
-  'Bootstrap-plain.svg', 
-  'MySQL', 
-  'AngularJS', 
-  'php', 
-  'Python', 
-  'Java', 
-  'C', 
-  'Android', 
-  'Ubuntu-plain.svg', 
-  'Bash', 
-  'git', 
-  'GitHub', 
-  'NGINX', 
+  'HTML5-original', 
+  'JavaScript-original', 
+  'CSS3-original', 
+  'jQuery-original', 
+  'nodejs-original', 
+  'Bootstrap-plain', 
+  'MySQL-original', 
+  'AngularJS-original', 
+  'php-original', 
+  'Python-original', 
+  'Java-original', 
+  'C-original', 
+  'Android-original', 
+  'Ubuntu-plain', 
+  'Bash-original', 
+  'git-original', 
+  'GitHub-original', 
+  'NGINX-original', 
 ];
 window.onload = window.onresize = () => {
   const div = document.querySelector('#contact > div');
@@ -83,7 +83,7 @@ for(var l of languages){
   elm.dataset.name = l.match(/^\w+/g);
   l = l.toLowerCase();
   elm.className = 'lang-icon';
-  elm.style.backgroundImage = `url(https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/icons/${l.match(/^\w+/g)}/${l.endsWith('.svg') ? l : l + '-original.svg'})`;
+  elm.style.backgroundImage = `url(https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/icons/${l.match(/^\w+/g)}/${l}.svg)`;
   sk.appendChild(elm);
 }
 form.onsubmit = () => {
