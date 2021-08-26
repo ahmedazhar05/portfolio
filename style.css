@@ -442,8 +442,8 @@ span.highlight{
   height: 100%;
   left: 0;
   top: 0;
-  background: url(https://avatars1.githubusercontent.com/u/9919?s=200&v=4) calc(100% + 45px) calc(100% + 40px) no-repeat;
-  filter: invert(1) opacity(0.1);
+  background: url(https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png) 110% 30%/38% no-repeat;
+  filter: opacity(0.1);
 }
 .repo-card img {
   width: 50px;
