@@ -681,6 +681,7 @@ form textarea{
   max-width: 550px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 #contact h3 > span.place::before{
   content: 'aside';
