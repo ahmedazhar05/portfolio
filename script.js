@@ -39,7 +39,7 @@ fetch('https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data
 .then(data => {
   for(var i in socials){
     const t = document.createElement('A');
-    t.style.setProperty('--color', '#' + data.icons.find(v => v.title.toLowerCase() == i).hex);
+    t.style.setProperty('--color', '#' + data.icons.find(v => v.title.toLowerCase() == i.replace(/\-/g, ' ')).hex);
     //t.dataset.color = '#' + data.icons.find(v => v.title.toLowerCase() == i).hex;
     t.className = 'fab fa-2x fa-fw fa-'+i;
     t.href = socials[i]+'ahmedazhar05';
