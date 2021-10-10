@@ -701,7 +701,8 @@ form textarea{
   margin: 0 auto;
 }*/
 section#contact > div {
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   position: relative;
 }

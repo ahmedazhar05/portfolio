@@ -12,6 +12,7 @@ const socials = {
   'stack-overflow': 'https://stackoverflow.com/users/16236044/',
   //linkedin: 'https://linkedin.com/in/mohammed-azhar-ahmed-4006601b2/',
 };
+
 const languages = [
   'HTML5-original', 
   'JavaScript-original', 
@@ -32,13 +33,7 @@ const languages = [
   'GitHub-original', 
   'NGINX-original', 
 ];
-window.onload = window.onresize = () => {
-  const div = document.querySelector('#contact > div');
-  if(Array.from(document.querySelectorAll('#contact > div > div')).reduce((t, e) => t + e.clientWidth, 0) > div.clientWidth)
-    div.classList.add('centered');
-  else 
-    div.classList.remove('centered');
-};
+
 fetch('https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data/simple-icons.json')
 .then(response => response.json())
 .then(data => {
@@ -52,6 +47,7 @@ fetch('https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data
     sl.appendChild(t);
   }
 });
+
 fetch('https://api.github.com/users/ahmedazhar05/repos')
 .then(response => response.json())
 .then(data => {
@@ -78,6 +74,7 @@ fetch('https://api.github.com/users/ahmedazhar05/repos')
   }
   cards = document.querySelectorAll('.card, .repo-card');
 });
+
 for(var l of languages){
   const elm = document.createElement('DIV');
   elm.dataset.name = l.match(/^\w+/g);
@@ -86,6 +83,7 @@ for(var l of languages){
   elm.style.backgroundImage = `url(https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/icons/${l.match(/^\w+/g)}/${l}.svg)`;
   sk.appendChild(elm);
 }
+
 form.onsubmit = () => {
   const name = document.querySelector('form #username');
   const email = document.querySelector('form #email');
@@ -112,6 +110,7 @@ form.onsubmit = () => {
     }, 4000);
   });
 };
+
 var loop = () => {
   cards.forEach(c => {
     const b = c.getBoundingClientRect();
@@ -122,4 +121,5 @@ var loop = () => {
   });
   scroll(loop);
 };
+
 loop();
