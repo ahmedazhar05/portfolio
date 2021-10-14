@@ -24,8 +24,8 @@ header{
   text-align: right;
   position: relative;
 
-  -webkit-print-color-adjust: exact !important;
-  color-adjust: exact !important;
+  /*-webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;*/
 }
 header img{
   display: block;
@@ -122,13 +122,17 @@ ul ul > li{
 ul ul > li:not(:last-child)::after{
   content: ', ';
 }
-#container + button{
-  float: left;
+#controls{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
 }
-button + button{
-  float: right;
+#controls a{
+  text-align: center;
+  text-decoration: none;
+  cursor: default;
 }
-button{
+#controls a, button{
   padding: 10px;
   width: 25%;
   display: block;
@@ -139,7 +143,7 @@ button{
   border: 0;
   color: white;
   font-weight: bold;
-  float: left;
+  font-family: sans-serif;
 }
 dl{
   padding-inline-start: 30px;
@@ -161,7 +165,7 @@ section:nth-of-type(3) div{
     box-shadow: none;
     padding: 0;
   }
-  button{
+  #controls{
     display: none;
   }
   section:nth-of-type(3) div{
