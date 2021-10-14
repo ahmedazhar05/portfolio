@@ -10,7 +10,6 @@ const socials = {
   'instagram': 'https://instagram.com/',
   'linkedin': 'https://linkedin.com/in/',
   'stack-overflow': 'https://stackoverflow.com/users/16236044/',
-  //linkedin: 'https://linkedin.com/in/mohammed-azhar-ahmed-4006601b2/',
 };
 
 const languages = [
@@ -34,6 +33,7 @@ const languages = [
   'NGINX-original', 
 ];
 
+// adding social icons in `contact` section
 fetch('https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data/simple-icons.json')
 .then(response => response.json())
 .then(data => {
@@ -48,6 +48,7 @@ fetch('https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data
   }
 });
 
+// adding github repositories in the `project` section
 fetch('https://api.github.com/users/ahmedazhar05/repos')
 .then(response => response.json())
 .then(data => {
@@ -75,6 +76,7 @@ fetch('https://api.github.com/users/ahmedazhar05/repos')
   cards = document.querySelectorAll('.card, .repo-card');
 });
 
+// fetching and adding language icons in the `skills` section
 for(var l of languages){
   const elm = document.createElement('DIV');
   elm.dataset.name = l.match(/^\w+/g);
@@ -84,6 +86,7 @@ for(var l of languages){
   sk.appendChild(elm);
 }
 
+// sending each form-response request to the backend server
 form.onsubmit = () => {
   const name = document.querySelector('form #username');
   const email = document.querySelector('form #email');
@@ -110,6 +113,23 @@ form.onsubmit = () => {
     }, 4000);
   });
 };
+
+// updating completed courses' certificate in the `achievements` section
+fetch("https://script.google.com/macros/s/AKfycbw8iaBnF3bJc5gEuvVA85pbpTOgXPdA9slO4-CGlB6G2UdVuoOJDnvknoYsyIA7HMaR/exec")
+.then(resp => resp.json())
+.then(data => {
+  var f = document.createDocumentFragment();
+  for(const cert of data){
+    const div = document.createElement("DIV");
+    div.className = "certificate";
+    div.innerHTML = `<img src="${cert.image}" alt="Course Banner">
+      <h3>${cert.title}</h3>
+      <h4>${cert.instructors}</h4>
+      <a href="${cert.url}" target="_blank">Certificate</a>`;
+    f.appendChild(div);
+  }
+  document.querySelector("#certifications article").append(f);
+})
 
 var loop = () => {
   cards.forEach(c => {

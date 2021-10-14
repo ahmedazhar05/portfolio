@@ -785,7 +785,8 @@ article .certificate {
   bottom: calc(1.7em + 23px);
 }
 .certificate img {
-  max-width: 300px;
+  width: 300px;
+  max-height: 168px;
   transition: filter 0.1s;
 }
 .certificate img:hover {
