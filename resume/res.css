@@ -15,13 +15,13 @@ body{
   box-shadow: 0 0 5px black;
 }
 header{
-  padding: 20px 30px;
+  padding: 10px 40px;
   /*height: max-content;*/
   height: calc(150px + 6px);
   display: inline-block;
-  width: calc(100% - 60px);
+  width: calc(100% - 80px);
   background: aliceblue;
-  text-align: right;
+  text-align: left;
   position: relative;
 
   /*-webkit-print-color-adjust: exact !important;
@@ -38,7 +38,7 @@ header img{
 }
 header span{
   position: relative;
-  right: 0;
+  /* right: 0; */
 }
 span#name, span#job-title{
   text-transform: uppercase;
@@ -52,8 +52,8 @@ span#name{
   font-size: 1.6em;
   text-transform: uppercase;
   display: block;
-  margin-left: 156px;
-  margin-top: calc(78px - 1.6em);
+  /* margin-left: 156px;*/
+  margin-top: calc(75px - 1.6em);
 }
 span#address{
   font-family: sans-serif;
@@ -151,7 +151,7 @@ dl{
 dt{
   display: list-item;
 }
-section:not(:last-child) dt{
+section:not(:last-child, :nth-last-child(2), :nth-last-child(3), :nth-last-child(4)) dt{
   font-weight: bold;
 }
 section:nth-of-type(3) div{
