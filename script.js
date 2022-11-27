@@ -86,7 +86,7 @@ form.onsubmit = () => {
   const s = document.querySelector('#contact span.response.sending');
   s.classList.add('visible');
   document.querySelector('#contact h4').scrollIntoView();
-  fetch('https://script.google.com/macros/s/AKfycbwgfwaT8OLRwGtl71o5okvTa-c8KK6sq6db64Gg5hHbaxvDozg/exec?name='+name.value+'&email='+email.value+'&message='+message.value)
+  fetch('https://script.google.com/macros/s/AKfycbzZQqZj2ZZbvlmJFR_kEQvRaajpWywhlwblX7aZYqEhLeUMsuOf_CaWyFpNI7fLJLDV/exec?name='+name.value+'&email='+email.value+'&message='+message.value)
   .then(response => response.json())
   .then(data => {
     s.classList.remove('visible');
