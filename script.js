@@ -127,21 +127,48 @@ form.onsubmit = () => {
   });
 };
 
+const certs = [
+  {
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstudybullet.com%2Fwp-content%2Fuploads%2F2023%2F01%2FAZ-104-Microsoft-Azure-Administrator-Practice-test.jpg&f=1&nofb=1&ipt=d0b9b8108d3c1395e3ca7754d02f29d9f67b249b55e1c086ebc8e69afd0ebb52&ipo=images",
+    title: "Microsoft Certified: Azure Administrator Associate",
+    instructors: "AZ-104",
+    url: "https://learn.microsoft.com/api/credentials/share/en-us/MohammedAzharAhmed-4465/2DD3F2EC48797C2E?sharingId=19C974CE37E342AD"
+  },
+  {
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstudybullet.com%2Fwp-content%2Fuploads%2F2022%2F10%2FMicrosoft-Azure-DevOps-Solutions-AZ-400-Exam-2022.jpg&f=1&nofb=1&ipt=f8b458fe96b158f655aaf3d30671687d581be3b592218e1883392d75818c9033&ipo=images",
+    title: "Microsoft Certified: DevOps Engineer Expert",
+    instructors: "AZ-400",
+    url: "https://learn.microsoft.com/api/credentials/share/en-us/MohammedAzharAhmed-4465/4D5C12328DE1D5EC?sharingId=19C974CE37E342AD"
+  },
+  // {
+  //   image: "https://images.squarespace-cdn.com/content/v1/619f3e85766fd36658628a39/1637990482635-U9GFXVM0609K7QVJV4Q0/AZ104+banner.jpeg?format=1500w",
+  //   title: "Microsoft Certified: Azure Administrator Associate",
+  //   instructors: "AZ-104",
+  //   url: "https://learn.microsoft.com/api/credentials/share/en-us/MohammedAzharAhmed-4465/2DD3F2EC48797C2E?sharingId=19C974CE37E342AD"
+  // },
+  // {
+  //   image: "https://images.squarespace-cdn.com/content/v1/619f3e85766fd36658628a39/1637992639647-4XKVD06APDBTGNWYWGDC/AZ400+banner.jpeg?format=1500w",
+  //   title: "Microsoft Certified: DevOps Engineer Expert",
+  //   instructors: "AZ-400",
+  //   url: "https://learn.microsoft.com/api/credentials/share/en-us/MohammedAzharAhmed-4465/4D5C12328DE1D5EC?sharingId=19C974CE37E342AD"
+  // }
+];
+
 // updating completed courses' certificate in the `achievements` section
 // fetch("https://script.google.com/macros/s/AKfycbw8iaBnF3bJc5gEuvVA85pbpTOgXPdA9slO4-CGlB6G2UdVuoOJDnvknoYsyIA7HMaR/exec")
 // .then(resp => resp.json())
 // .then(data => {
-//   var f = document.createDocumentFragment();
-//   for(const cert of data){
-//     const div = document.createElement("DIV");
-//     div.className = "certificate";
-//     div.innerHTML = `<img src="${cert.image}" alt="Course Banner">
-//       <h3>${cert.title}</h3>
-//       <h4>${cert.instructors}</h4>
-//       <a href="${cert.url}" target="_blank">Certificate</a>`;
-//     f.appendChild(div);
-//   }
-//   document.querySelector("#certifications article").append(f);
+  var f = document.createDocumentFragment();
+  for(const cert of certs){
+    const div = document.createElement("DIV");
+    div.className = "certificate";
+    div.innerHTML = `<img src="${cert.image}" alt="Course Banner">
+      <h3>${cert.title}</h3>
+      <h4>${cert.instructors}</h4>
+      <a href="${cert.url}" target="_blank">Certificate</a>`;
+    f.appendChild(div);
+  }
+  document.querySelector("#certifications article").append(f);
 // })
 
 var loop = () => {
