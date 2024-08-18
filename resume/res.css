@@ -45,6 +45,10 @@ span#name, span#job-title{
   font-family: Helvetica;
   font-weight: bold;
 }
+span#email, span#mobile {
+  font-family: sans-serif;
+  font-size: 0.95rem;
+}
 span#email, span#mobile, span#address{
   font-style: italic;
 }
@@ -151,7 +155,7 @@ dl{
 dt{
   display: list-item;
 }
-section:not(:last-child, :nth-last-child(2), :nth-last-child(3)) dt{
+section:not(:last-child) dt{
   font-weight: bold;
 }
 section dd {
