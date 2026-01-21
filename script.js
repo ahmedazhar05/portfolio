@@ -129,13 +129,13 @@ form.onsubmit = () => {
 
 const certs = [
   {
-    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstudybullet.com%2Fwp-content%2Fuploads%2F2023%2F01%2FAZ-104-Microsoft-Azure-Administrator-Practice-test.jpg&f=1&nofb=1&ipt=d0b9b8108d3c1395e3ca7754d02f29d9f67b249b55e1c086ebc8e69afd0ebb52&ipo=images",
+    image: "./files/AZ-104-Microsoft-Azure-Administrator-Practice-test.jpg",
     title: "Microsoft Certified: Azure Administrator Associate",
     instructors: "AZ-104",
     url: "https://learn.microsoft.com/api/credentials/share/en-us/MohammedAzharAhmed-4465/2DD3F2EC48797C2E?sharingId=19C974CE37E342AD"
   },
   {
-    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstudybullet.com%2Fwp-content%2Fuploads%2F2022%2F10%2FMicrosoft-Azure-DevOps-Solutions-AZ-400-Exam-2022.jpg&f=1&nofb=1&ipt=f8b458fe96b158f655aaf3d30671687d581be3b592218e1883392d75818c9033&ipo=images",
+    image: "./files/Microsoft-Azure-DevOps-Solutions-AZ-400-Exam-2022.jpg",
     title: "Microsoft Certified: DevOps Engineer Expert",
     instructors: "AZ-400",
     url: "https://learn.microsoft.com/api/credentials/share/en-us/MohammedAzharAhmed-4465/4D5C12328DE1D5EC?sharingId=19C974CE37E342AD"
